@@ -4,6 +4,7 @@ function AddBook() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [image, setImage] = useState("");
+  const [paragraph, setParagraph] = useState("");
   const [error, setError] = useState("");
   const [date, setDate] = useState("");
 
@@ -11,43 +12,45 @@ function AddBook() {
     "w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500";
 
   const handleSubmit = (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!title || !author || !date) {
-    setError("Please fill all required fields");
-    return;
-  }
+    if (!title || !author || !date) {
+      setError("Please fill all required fields");
+      return;
+    }
 
-  setError("");
+    setError("");
 
-  const newBook = {
-    title,
-    author,
-    image,
-    addedDate: date,
-  };
+    const newBook = {
+      title,
+      author,
+      image,
+      addedDate: date,
+      paragraph
+    };
 
-  fetch("http://localhost:5001/books", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newBook),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log("Book added:", data);
-
-      setTitle("");
-      setAuthor("");
-      setImage("");
-      setDate("");
+    fetch("http://localhost:5001/books", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newBook),
     })
-    .catch((err) => {
-      console.error(err);
-      setError("Failed to add book");
-    });
-};
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Book added:", data);
+
+        setTitle("");
+        setAuthor("");
+        setImage("");
+        setDate("");
+        setParagraph("");
+      })
+      .catch((err) => {
+        console.error(err);
+        setError("Failed to add book");
+      });
+  };
 
   return (
     <main className="py-12 px-4">
@@ -87,17 +90,31 @@ function AddBook() {
           </label>
 
           <label className="block">
-  <span className="block text-sm font-medium mb-1">
-    Published Date
-  </span>
+            <span className="block text-sm font-medium mb-1">
+              Paragraph
+            </span>
 
-  <input
-    type="date"
-    className={inputClass}
-    value={date}
-    onChange={(e) => setDate(e.target.value)}
-  />
-</label>
+            <textarea
+              className={inputClass}
+              rows="8"
+              value={paragraph}
+              onChange={(e) => setParagraph(e.target.value)}
+              placeholder="Enter book paragraph..."
+            />
+          </label>
+
+          <label className="block">
+            <span className="block text-sm font-medium mb-1">
+              Published Date
+            </span>
+
+            <input
+              type="date"
+              className={inputClass}
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </label>
 
           <label className="block">
             <span className="block text-sm font-medium mb-1">

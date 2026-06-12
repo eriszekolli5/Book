@@ -11,52 +11,61 @@
   "books": [
     {
       "id": "1",
-      "title": "Atomic Habits",
-      "author": "James Clear",
-      "image": "https://images.unsplash.com/photo-1641154748135-8032a61a3f80?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "addedDate": "2026-06-10"
+      "title": "Prisoner of Azkaban",
+      "author": "Harry Potter",
+      "image": "https://static.posters.cz/image/1300/214928.jpg",
+      "addedDate": "2026-06-10",
+      "paragraph": "Happiness can be found, even in the darkest of times, if one only remembers to turn on the light.  It takes a great deal of courage to stand up to your enemies, but even more to stand up to your friends. Then you should have died! Died rather than betray your friends, as we would have done for you!"
     },
     {
       "id": "2",
-      "title": "Atomic Habits",
-      "author": "James Clear",
-      "image": "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?q=80&w=1212&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "addedDate": "2026-06-10"
+      "title": "Nevermoor: The Trials of Morrigan Crow",
+      "author": "Jessica Townsend",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Nevermoor.jpg/250px-Nevermoor.jpg",
+      "addedDate": "2026-06-10",
+      "paragraph": "Ginger was an understatement, Morrigan thought, trying to hide her astonishment as the hat came off. Ginger of the Year or King Ginger or Big Gingery President of the Ginger Foundation for the Incurably Ginger would have been more accurate. His mane of bright copper waves could probably have won awards."
     },
     {
       "id": "3",
-      "title": "Atomic Habits",
-      "author": "James Clear",
-      "image": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1212&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "addedDate": "2026-06-10"
+      "title": "Deathly Hallows",
+      "author": "Harry Potter",
+      "image": "https://m.media-amazon.com/images/I/71Q1Iu4suSL._AC_UF894,1000_QL80_.jpg",
+      "addedDate": "2026-06-10",
+      "paragraph": "A red‐gold glow burst suddenly across the enchanted sky above them as an edge of dazzling sun appeared over the sill of the nearest window. The light hit both of their faces at the same time, so that Voldemort’s was suddenly a flaming blur. Harry heard the high voice shriek as he too yelled his best hope to the heavens, pointing Draco’s wand."
     },
     {
       "id": "4",
-      "title": "Atomic Habits",
-      "author": "James Clear",
-      "image": "https://images.unsplash.com/photo-1633477189729-9290b3261d0a?q=80&w=1022&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "addedDate": "2026-06-10"
+      "title": "Artemis Fowl and The Arctic Incident",
+      "author": "Eoin Colfer",
+      "image": "https://cdn2.penguin.com.au/covers/original/9780141339108.jpg",
+      "addedDate": "2026-06-10",
+      "paragraph": "Sig Sauer. Nine millimetres. Thirteen in the magazine. Big bullets. One of these hits you and it could blow your head off; something even the magic can't fix. Other than that you should be all right, presuming you remembered to wear the regulation above-ground micro-fibre jumpsuit recently patented by me. Then again, being a Recon jock, you probably didn't."
     },
     {
       "id": "5",
-      "title": "Atomic Habits",
-      "author": "James Clear",
-      "image": "https://images.unsplash.com/photo-1664252070223-dcf30f761a33?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "addedDate": "2026-06-10"
+      "title": "A Deadly Education",
+      "author": "Naomi Novik",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBzAqsjiinLqbf9U5rA_Q2JqJRnRew2IZBeWV-zZLTjS9rwWh6xAAktHivWSNq4XZ9jmX08Q&s",
+      "addedDate": "2026-06-10",
+      "paragraph": "You know, its almost impressive, he said after a moment, sounding less wobbly. Youre nearly dead and youre still the rudest person Ive ever met. Youre welcome again, by the way given hat youre at least half responsible for this situation, I refuse to thank you, I said."
     },
     {
-      "id": "6",
-      "title": "Atomic Habits",
-      "author": "James Clear",
-      "image": "https://images.unsplash.com/photo-1722706731912-dde6e451e59f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "addedDate": "2026-06-10"
-    },
+      "title": "Half-Blood Prince",
+      "author": "Harry Potter",
+      "image": "https://media.harrypotterfanzone.com/half-blood-prince-us-childrens-edition-2013.jpg",
+      "addedDate": "2026-06-10",
+      "id": "EO-MhE0M1L4",
+      "paragraph": "Age is foolish and forgetful when it underestimates youth,' said Dumbledore, shortly. 'But you are not eighteen, Harry. And between you and me, I have seen enough of blood and tears to last me a lifetime. I would be very glad to see fewer, or none, of them."
+    }
+  ],
+  "contacts": [
     {
-      "title": " ne",
-      "author": "new nw",
-      "image": "https://images.unsplash.com/photo-1593340010859-83edd3d6d13f?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "addedDate": "3333-11-22",
-      "id": "EO-MhE0M1L4"
+      "name": "Eris Zekolli",
+      "email": "eriszekolli5@gmail.com",
+      "subject": "book",
+      "message": "nice",
+      "createdAt": "2026-06-12T23:21:18.621Z",
+      "id": "1p9NTM-ZTL8"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

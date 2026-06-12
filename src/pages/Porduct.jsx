@@ -9,6 +9,7 @@ function Product() {
     author: "",
     image: "",
     addedDate: "",
+    paragraph: "",
   });
 
   useEffect(() => {
@@ -33,6 +34,7 @@ function Product() {
       author: book.author || "",
       image: book.image || "",
       addedDate: book.addedDate || "",
+      paragraph: book.paragraph|| "",
     });
   };
 
@@ -105,6 +107,18 @@ function Product() {
                   }
                   className="w-full border p-2 rounded mb-2"
                   placeholder="Image"
+                />
+
+                <input
+                  value={editBook.paragraph}
+                  onChange={(e) =>
+                    setEditBook({
+                      ...editBook,
+                      paragraph: e.target.value,
+                    })
+                  }
+                  className="w-full border p-2 rounded mb-2"
+                  placeholder="Paragraph"
                 />
 
                 <input

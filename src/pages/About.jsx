@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import BookImg from '../images/book-removebg-preview.png'
+import BookImg from '../images/books.png'
 import { NavLink } from 'react-router-dom'
 
 function About() {
@@ -12,7 +12,7 @@ function About() {
           <img
             src={BookImg}
             alt="Books"
-            className="max-w-lg w-full"
+            className="min-w-50 w-full"
           />
         </div>
         <div id="right-content" className='w-full'>

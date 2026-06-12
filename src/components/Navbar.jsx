@@ -21,6 +21,8 @@ function Navbar() {
         logOutUser();
         window.location.href("/");
     }
+
+
     return (
         <header>
             <nav className='shadow-sm sticky top-0 z-50 bg-white'>
@@ -90,7 +92,7 @@ function Navbar() {
 
                                 <li>
 
-                                    Hi, {user.name}
+                                    Hi, {user.fullName}
                                 </li>
                                 <li>
                                     <NavLink onClick={handleLogout} className="bg-red-700 text-blue-50 px-4 py-2 rounded-sm" to="/">Logout</NavLink>

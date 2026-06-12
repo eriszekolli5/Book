@@ -13,6 +13,8 @@ import AddProduct from './pages/AddBook'
 import Dashboard from './pages/Dashboard'
 import Porduct from './pages/Porduct'
 import AddBook from './pages/AddBook'
+import ReadingBook from './pages/ReadingBook'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -33,7 +35,9 @@ function App() {
         <Route path="/add-book" element={<AddBook />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/product" element={<Porduct />} />
+        <Route path="/reading/:id" element={<ReadingBook />} />
       </Routes>
+      <Footer />
     </>
   )
 }
