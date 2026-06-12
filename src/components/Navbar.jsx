@@ -47,6 +47,8 @@ function Navbar() {
                             <NavLink to="/contact">Contact</NavLink>
                         </li>
 
+
+
                         {!user && (
                             <>
 
@@ -74,12 +76,27 @@ function Navbar() {
                         {user && (
 
                             <>
-                            <li>
-                                Hi, {user.name}
-                            </li>
                                 <li>
-                                    <NavLink onClick={handleLogout} className="bg-red-700 text-blue-50 px-4 py-2 rounded-sm" to="/logout">Logout</NavLink>
+                                    <NavLink to="/dashboard">Dashboard</NavLink>
                                 </li>
+
+                                <li>
+                                    <NavLink to="/add-book">Add Book</NavLink>
+                                </li>
+
+                                <li>
+                                    <NavLink to="/product">Products</NavLink>
+                                </li>
+
+                                <li>
+
+                                    Hi, {user.name}
+                                </li>
+                                <li>
+                                    <NavLink onClick={handleLogout} className="bg-red-700 text-blue-50 px-4 py-2 rounded-sm" to="/">Logout</NavLink>
+                                </li>
+
+
 
                             </>
                         )}

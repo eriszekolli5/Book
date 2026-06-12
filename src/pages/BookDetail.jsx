@@ -1,66 +1,126 @@
-import React, { useEffect, useState } from 'react'
-import { data, Link, useParams } from 'react-router-dom';
-import { getBookById } from '../services/books';
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { getBookById } from "../services/books";
 
+function BookDetail() {
+  const { id } = useParams();
 
-    function BookDetail() {
-    const {id} = useParams();
-    const [book, setBook] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState("");
+  const [book, setBook] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [isReading, setIsReading] = useState(false);
 
-    useEffect(() => {
-        getBookById(id) 
-        .then((data) => {
-            setBook(data);
-            setLoading(false);
-        }).catch((error) => {
-            setError(error || "failed to fetch details");
-            setLoading(false)
-        })
-    },[id])
+  useEffect(() => {
+    getBookById(id)
+      .then((data) => {
+        setBook(data);
 
-    if (loading) {
-        return (
-            <main>
-                <p>Loading ...</p>
-            </main>
-        )
+        const readingBooks =
+          JSON.parse(localStorage.getItem("readingBooks")) || [];
+
+        const exists = readingBooks.some(
+          (item) => item.id === data.id
+        );
+
+        setIsReading(exists);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err?.message || "Failed to fetch details");
+        setLoading(false);
+      });
+  }, [id]);
+
+  const handleToggleReading = () => {
+    const readingBooks =
+      JSON.parse(localStorage.getItem("readingBooks")) || [];
+
+    if (isReading) {
+      const updatedBooks = readingBooks.filter(
+        (item) => item.id !== book.id
+      );
+
+      localStorage.setItem(
+        "readingBooks",
+        JSON.stringify(updatedBooks)
+      );
+
+      setIsReading(false);
+    } else {
+      readingBooks.push(book);
+
+      localStorage.setItem(
+        "readingBooks",
+        JSON.stringify(readingBooks)
+      );
+
+      setIsReading(true);
     }
+  };
 
-    if (error || !book) {
-        return (
-            <main>
-                <p className='bg-red-200 text-red-500'>{error}</p>
-            </main>
-        )
-    }
+  if (loading) {
+    return (
+      <main className="py-12 px-6">
+        <p>Loading...</p>
+      </main>
+    );
+  }
+
+  if (error || !book) {
+    return (
+      <main className="py-12 px-6">
+        <p className="bg-red-100 text-red-600 p-3 rounded">
+          {error || "Book not found"}
+        </p>
+      </main>
+    );
+  }
 
   return (
+    <main className="py-12 px-6">
+      <div className="max-w-4xl mx-auto">
+        <Link
+          to="/books"
+          className="inline-block mb-6 text-purple-700 font-medium"
+        >
+          ← Back To Books
+        </Link>
 
-    <main className='py-12 px-6'>
-     <div className='max-w-4xl mx-auto'>
-       <Link to={"/books"} className='text-blue-600 mb-6 inline-block'> -- Back To Books </Link>
-       <img
-  className="w-full max-h-[500px] rounded-xl object-cover mb-6"
-  src={book.image}
-  alt={book.title}
-/>
-       <h1 className="text-4xl font-bold mb-2">
-  {book.title}
-</h1>
+        <div className="flex flex-col md:flex-row gap-10 items-center">
+          <img
+            src={book.image}
+            alt={book.title}
+            className="w-[300px] h-[450px] object-cover rounded-xl shadow-lg"
+          />
 
-<p className="text-xl text-gray-600 mb-4">
-  {book.author}
-</p>
+          <div>
+            <h1 className="text-4xl font-bold mb-3">
+              {book.title}
+            </h1>
 
-<p className="text-gray-500">
-  Added: {book.addedDate}
-</p>
+            <p className="text-xl text-gray-600 mb-4">
+              {book.author}
+            </p>
 
-     </div>
+            <p className="text-gray-500 mb-6">
+              Added: {book.addedDate}
+            </p>
+
+            <button
+              onClick={handleToggleReading}
+              className={`px-6 py-3 rounded-lg text-white ${
+                isReading
+                  ? "bg-red-600 hover:bg-red-500"
+                  : "bg-purple-700 hover:bg-purple-600"
+              }`}
+            >
+              {isReading ? "Cancel Reading" : "Read"}
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
-  )
+  );
 }
 
-export default BookDetail
+export default BookDetail;
