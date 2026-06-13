@@ -56,8 +56,8 @@ function ReadingBook() {
     return (
         <div className="max-w-3xl mx-auto p-6">
 
-            <NavLink to={`/books/${id}`}>
-                Go Back
+            <NavLink to={`/books/${id}`} className="text-purple-800">
+                ← Go Back
             </NavLink>
 
             <h1 className="text-3xl font-bold mb-6">{book.title}</h1>
